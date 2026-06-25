@@ -1,0 +1,74 @@
+/* <link rel="stylesheet" href="components.css"> */
+
+:root {
+  --green: #227a3d;
+  --dark: #1a1c1c;
+  --gray: #d0d0d0;
+  --gray-bg: #f3f3f3;
+  --border: #c2c6d8;
+  --border-focus: #5aa270;
+  --muted: #6b7280;
+  --font: "Geist", system-ui, sans-serif;
+  --radius: 4px; /* radio de los botones */
+}
+
+* { box-sizing: border-box; }
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 55px;
+  padding: 0 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+.btn--dark     { background: var(--dark); }
+.btn--green    { background: var(--green); }
+.btn--muted    { background: var(--green); opacity: 0.5; }
+.btn--disabled { background: var(--gray); cursor: not-allowed; }
+.btn--outline  { height: 54px; border-radius: 3.5px; background: #eee; border-color: var(--muted); color: var(--dark); }
+
+/* Inputs */
+.input-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: var(--dark);
+}
+.input::placeholder,
+.textarea::placeholder { color: var(--muted); }
+.input:focus,
+.textarea:focus { outline: none; border-color: var(--border-focus); }
+
+.input {
+  height: 40px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.input-search { position: relative; width: 100%; }
+.input-search .input { height: 30px; padding-left: 2.25rem; background: var(--gray-bg); border: none; }
+.input-search__icon { position: absolute; left: 0.75rem; top: 50%; width: 1rem; transform: translateY(-50%); color: #727687; pointer-events: none; }
+
+.textarea-wrapper { display: flex; align-items: flex-end; gap: 0.5rem; padding: 0.5rem 0.75rem; border: 1px solid var(--border-focus); border-radius: 7.5px; background: #fff; }
+.textarea { flex: 1; border: none; resize: none; background: transparent; }
