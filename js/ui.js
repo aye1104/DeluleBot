@@ -55,3 +55,20 @@ function renderReactionPicker(messageId) {
 function markMessagesAsRead(messages) {
   return messages.map(msg => ({ ...msg, read: true }));
 }
+// --- INDICADOR ESCRIBIENDO ---
+function showTypingIndicator(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const typing = document.createElement('div');
+  typing.className = 'typing-indicator';
+  typing.id = 'typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  container.appendChild(typing);
+  container.scrollTop = container.scrollHeight;
+}
+
+function hideTypingIndicator() {
+  const typing = document.getElementById('typing');
+  if (typing) typing.remove();
+}
